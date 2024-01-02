@@ -12,4 +12,8 @@ routes.post('/criacao', (req, res): void => {
   void resultadoController.create(req, res)
 })
 
+routes.get('/listagem', (req, res): void => {
+  void resultadoController.getAll(req, res)
+})
+
 export default routes

@@ -4,10 +4,10 @@ import database from '../config/database'
 class Resultado extends Model {
   id!: number
   bimestre!: string
-  diciplina!: string
+  disciplina!: string
   nota!: number
-  criadoEm!: Date
-  atualizadoEm!: Date
+  createdAt!: Date
+  updatedAt!: Date
 }
 
 Resultado.init(
