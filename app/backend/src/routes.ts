@@ -16,4 +16,8 @@ routes.get('/listagem', (req, res): void => {
   void resultadoController.getAll(req, res)
 })
 
+routes.delete('/remocao', (req, res): void => {
+  void resultadoController.remove(req, res)
+})
+
 export default routes
