@@ -44,6 +44,8 @@ services:
     platform: linux/x86_64
     ports:
       - 3002:3306
+    volumes:
+    - ./init-script.sql:/docker-entrypoint-initdb.d/init-script.sql
     environment:
       - MYSQL_ROOT_PASSWORD=123456
     restart: 'always'
