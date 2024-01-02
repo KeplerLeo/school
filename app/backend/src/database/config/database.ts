@@ -1,14 +1,13 @@
-import { Sequelize } from "sequelize";
-import dotenv from "dotenv/config.js";
+import { Sequelize } from 'sequelize'
 
-const dbName = process.env.DB_NAME || "db";
-const dbUser = process.env.DB_USER || "root";
-const dbPassword = process.env.DB_PASSWORD || "123456";
-const dbHost = process.env.DB_HOST || "localhost";
+const dbName = 'SCHOOL'
+const dbUser = 'root'
+const dbPassword = '123456'
+const dbHost = 'localhost'
 
 const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
-  dialect: "mysql",
-  host: dbHost,
-});
+  dialect: 'mysql',
+  host: dbHost
+})
 
-export default sequelize;
+export default sequelize
