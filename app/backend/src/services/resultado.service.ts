@@ -4,8 +4,9 @@ import resultadoModel from '../database/models/resultado.model'
 class ResultadoService {
   private readonly _model: ModelStatic<resultadoModel> = resultadoModel
 
-  public async create (resultado: Partial<resultadoModel>): Promise<resultadoModel> {
-    return await this._model.create(resultado)
+  public async create (bimestre: string, disciplina: string, nota: number): Promise<string> {
+    const resultado = await this._model.create({ bimestre, disciplina, nota })
+    return `${resultado.id}`
   }
 }
 

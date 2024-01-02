@@ -7,7 +7,8 @@ const dbHost = 'localhost'
 
 const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
   dialect: 'mysql',
-  host: dbHost
+  host: dbHost,
+  port: 3002
 })
 
 export default sequelize

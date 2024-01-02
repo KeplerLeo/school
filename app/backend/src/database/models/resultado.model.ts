@@ -21,26 +21,19 @@ Resultado.init(
       type: DataTypes.STRING(6),
       allowNull: false
     },
-    diciplina: {
+    disciplina: {
       type: DataTypes.STRING(50),
       allowNull: false
     },
     nota: {
       type: DataTypes.FLOAT,
       allowNull: false
-    },
-    criadoEm: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-    atualizadoEm: {
-      type: DataTypes.DATE,
-      allowNull: false
     }
   },
   {
     tableName: 'resultado',
-    sequelize: database
+    sequelize: database,
+    timestamps: true
   }
 )
 
