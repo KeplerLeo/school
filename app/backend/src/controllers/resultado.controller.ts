@@ -1,6 +1,5 @@
 import { type Request, type Response } from 'express'
 import ResultadoService from '../services/resultado.service'
-import { log } from 'console'
 
 class ResultadoController {
   private readonly _service = new ResultadoService()
