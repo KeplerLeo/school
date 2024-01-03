@@ -3,7 +3,7 @@ import React from 'react'
 interface DisciplinaCardProps {
   disciplina: string
   data: string
-  nota: number
+  nota: string
 }
 
 const DisciplinaCard: React.FC<DisciplinaCardProps> = ({ disciplina, data, nota }) => {

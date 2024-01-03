@@ -25,14 +25,15 @@ h1 {
 }
 
 .card {
-  flex: 0 0 calc(16.33% - 20px);
-  max-width: calc(16.33% - 20px);
+  flex: 0 0 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
   width: 100%;
   background-color: #eee;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
   color: #222;
+  position: relative;
 }
 
 .container {
@@ -49,16 +50,30 @@ section {
 }
 
 h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: bold;
   margin-bottom: 0;
 }
 
 .nota {
   margin-top: 2rem;
+  background-color: #0000009c;
+  box-sizing: border-box;
+  width: calc(100% + 40px); /* Adiciona o dobro do padding à largura */
+  position: relative;
+  left: -20px; /* Move a div para a esquerda */
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .Sociologia {
   background: #9b19c2;
   color: #fff;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: lighter;
+  margin-bottom: 0;
 }
