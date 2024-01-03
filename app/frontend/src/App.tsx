@@ -1,27 +1,61 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import appContext from './context/appContext'
+import DisciplinaCard from './components/disciplinaCard'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function App () {
   const { state } = useContext<any>(appContext)
+  function formatDate (dateString: string): string {
+    const date = new Date(dateString)
+    const day = String(date.getDate()).padStart(2, '0')
+    const month = String(date.getMonth() + 1).padStart(2, '0')
+    const year = date.getFullYear()
+
+    return `${day}/${month}/${year}`
+  }
+
+  const bimestre1 = state.filter(
+    (disciplina: any) => disciplina.bimestre === 'PRIMEIRO'
+  )
+  const bimestre2 = state.filter(
+    (disciplina: any) => disciplina.bimestre === 2
+  )
+  const bimestre3 = state.filter(
+    (disciplina: any) => disciplina.bimestre === 3
+  )
+  const bimestre4 = state.filter(
+    (disciplina: any) => disciplina.bimestre === 4
+  )
+
   console.log(state)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Learn React
-        </a>
-      </header>
+    <div>
+      <section>
+        <div className="container">
+          <div className="cards">
+            <h1>Bimestre 1</h1>
+            {bimestre1.map((disciplina: any) => (
+              <DisciplinaCard
+                disciplina={disciplina.disciplina}
+                data={formatDate(disciplina.updatedAt as string)}
+                nota={disciplina.nota}
+                key={disciplina.id}
+              />
+            ))}
+          </div>
+          <div className="cards">
+            <h1>Bimestre 2</h1>
+          </div>
+          <div className="cards">
+            <h1>Bimestre 3</h1>
+          </div>
+          <div className="cards">
+            <h1>Bimestre 4</h1>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
