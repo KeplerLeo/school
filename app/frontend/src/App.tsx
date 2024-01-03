@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import appContext from './context/appContext'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function App () {
+  const { state } = useContext<any>(appContext)
+  console.log(state)
   return (
     <div className="App">
       <header className="App-header">
@@ -16,8 +19,7 @@ function App () {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
+        >Learn React
         </a>
       </header>
     </div>
