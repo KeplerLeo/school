@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useMemo, useState } from 'react'
-import { deleteRequest, getRequest } from '../services/requests'
+import { deleteRequest, getRequest, setRequest } from '../services/requests'
 import AppContext from './appContext'
 
 const INITIAL_STATE: any[] | (() => any[]) = []
@@ -26,17 +26,29 @@ function Provider ({ children }: { children: React.ReactNode }): JSX.Element {
     }
     await deleteRequest('/remocao', newDisciplina)
 
-    // Update the state by filtering out the deleted disciplina
-    setState((prevState) =>
-      prevState.filter(
-        (d) => d.bimestre !== bimestre || d.disciplina !== disciplina
-      )
-    )
+    const data = await getRequest('/listagem')
+    setState(data)
+  }
+
+  async function addDisciplina (
+    bimestre: string,
+    disciplina: string,
+    nota: string
+  ): Promise<void> {
+    const newDisciplina = {
+      bimestre,
+      disciplina,
+      nota
+    }
+    await setRequest('/criacao', newDisciplina)
+
+    const data = await getRequest('/listagem')
+    setState(data)
   }
 
   const contextValue = useMemo(
-    () => ({ state, deleteDisciplina }),
-    [state, deleteDisciplina]
+    () => ({ state, deleteDisciplina, addDisciplina }),
+    [state, deleteDisciplina, addDisciplina]
   )
 
   return (
