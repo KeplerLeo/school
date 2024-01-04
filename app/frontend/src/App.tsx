@@ -20,24 +20,27 @@ function App () {
     (disciplina: any) => disciplina.bimestre === 'PRIMEIRO'
   )
   const bimestre2 = state.filter(
-    (disciplina: any) => disciplina.bimestre === 2
+    (disciplina: any) => disciplina.bimestre === 'SEGUNDO'
   )
   const bimestre3 = state.filter(
-    (disciplina: any) => disciplina.bimestre === 3
+    (disciplina: any) => disciplina.bimestre === 'TERCEIRO'
   )
   const bimestre4 = state.filter(
-    (disciplina: any) => disciplina.bimestre === 4
+    (disciplina: any) => disciplina.bimestre === 'QUARTO'
   )
 
-  console.log(state)
   return (
     <div>
       <section>
         <div className="container">
-          <h1>Bimestre 1</h1>
+          <div>
+            <button className="btnAdicionar">+</button>
+            <h1>Bimestre 1</h1>
+          </div>
           <div className="cards">
             {bimestre1.map((disciplina: any) => (
               <DisciplinaCard
+                bimestre="PRIMEIRO"
                 disciplina={disciplina.disciplina}
                 data={formatDate(disciplina.updatedAt as string)}
                 nota={disciplina.nota}
@@ -45,11 +48,20 @@ function App () {
               />
             ))}
           </div>
-          <h1>Bimestre 2</h1>
+          <div>
+            <button className="btnAdicionar">+</button>
+            <h1>Bimestre 2</h1>
+          </div>
           <div className="cards"></div>
-          <h1>Bimestre 3</h1>
+          <div>
+            <button className="btnAdicionar">+</button>
+            <h1>Bimestre 3</h1>
+          </div>
           <div className="cards"></div>
-          <h1>Bimestre 4</h1>
+          <div>
+            <button className="btnAdicionar">+</button>
+            <h1>Bimestre 4</h1>
+          </div>
           <div className="cards"></div>
         </div>
       </section>
