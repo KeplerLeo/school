@@ -53,6 +53,7 @@ function App () {
           <div>
             <button
               className="btnAdicionar"
+              title="Adicionar"
               onClick={() => {
                 togglePopup('PRIMEIRO')
               }}
@@ -66,7 +67,7 @@ function App () {
               <DisciplinaCard
                 bimestre="PRIMEIRO"
                 disciplina={disciplina.disciplina}
-                data={formatDate(disciplina.updatedAt as string)}
+                data={formatDate(disciplina.createdAt as string)}
                 nota={disciplina.nota}
                 key={disciplina.id}
               />
@@ -88,7 +89,7 @@ function App () {
               <DisciplinaCard
                 bimestre="SEGUNDO"
                 disciplina={disciplina.disciplina}
-                data={formatDate(disciplina.updatedAt as string)}
+                data={formatDate(disciplina.createdAt as string)}
                 nota={disciplina.nota}
                 key={disciplina.id}
               />
@@ -110,7 +111,7 @@ function App () {
               <DisciplinaCard
                 bimestre="TERCEIRO"
                 disciplina={disciplina.disciplina}
-                data={formatDate(disciplina.updatedAt as string)}
+                data={formatDate(disciplina.createdAt as string)}
                 nota={disciplina.nota}
                 key={disciplina.id}
               />
@@ -132,7 +133,7 @@ function App () {
               <DisciplinaCard
                 bimestre="QUARTO"
                 disciplina={disciplina.disciplina}
-                data={formatDate(disciplina.updatedAt as string)}
+                data={formatDate(disciplina.createdAt as string)}
                 nota={disciplina.nota}
                 key={disciplina.id}
               />

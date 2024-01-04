@@ -35,6 +35,7 @@ const DisciplinaCard: React.FC<DisciplinaCardProps> = ({
         className="btnExcluir"
         src={trashIcon}
         alt="Lixeira"
+        title="Excluir"
         onClick={() => {
           deleteDisciplina(bimestre, disciplina)
         }}
