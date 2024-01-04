@@ -1,11 +1,13 @@
 import express, { type Express } from 'express'
 import routes from './routes'
 import db from './database/config/database'
+import cors from 'cors'
 
 const app: Express = express()
 const port = 3001
 
 app.use(express.json())
+app.use(cors())
 app.use(routes)
 
 db.sync({})
