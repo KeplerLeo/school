@@ -34,8 +34,8 @@ function App () {
     <div>
       <section>
         <div className="container">
+          <h1>Bimestre 1</h1>
           <div className="cards">
-            <h1>Bimestre 1</h1>
             {bimestre1.map((disciplina: any) => (
               <DisciplinaCard
                 disciplina={disciplina.disciplina}
@@ -45,15 +45,12 @@ function App () {
               />
             ))}
           </div>
-          <div className="cards">
-            <h1>Bimestre 2</h1>
-          </div>
-          <div className="cards">
-            <h1>Bimestre 3</h1>
-          </div>
-          <div className="cards">
-            <h1>Bimestre 4</h1>
-          </div>
+          <h1>Bimestre 2</h1>
+          <div className="cards"></div>
+          <h1>Bimestre 3</h1>
+          <div className="cards"></div>
+          <h1>Bimestre 4</h1>
+          <div className="cards"></div>
         </div>
       </section>
     </div>
